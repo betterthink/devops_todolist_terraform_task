@@ -18,10 +18,10 @@ variable "vm_size" {
   type = string
 }
 variable "ssh_key_public" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "github_repo" {
- type = string 
+  type = string
 }
