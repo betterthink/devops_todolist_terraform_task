@@ -12,6 +12,6 @@ resource "azurerm_storage_account" "st_acc" {
 
 resource "azurerm_storage_container" "task-artifacts" {
   name                  = "task-artifacts"
-  storage_account_name = azurerm_storage_account.st_acc.name
+  storage_account_name  = azurerm_storage_account.st_acc.name
   container_access_type = "private"
 }
