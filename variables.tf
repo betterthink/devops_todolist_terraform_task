@@ -1,0 +1,58 @@
+variable "location" {
+  type    = string
+  default = "uksouth"
+}
+
+variable "resource_group_name" {
+  type    = string
+  default = "mate-azure-task-12"
+}
+
+variable "virtual_network_name" {
+  type    = string
+  default = "vnet"
+}
+
+variable "vnet_adress_prefix" {
+  type    = string
+  default = "10.0.0.0/16"
+}
+variable "subnet_name" {
+  type    = string
+  default = "default"
+}
+variable "subnet_adress_prefix" {
+  type    = string
+  default = "10.0.0.0/24"
+}
+variable "network_security_group_name" {
+  type    = string
+  default = "defaultnsg"
+}
+
+variable "public_ip_adress_name" {
+  type    = string
+  default = "linuxboxpip"
+}
+variable "vm_name" {
+  type    = string
+  default = "matebox"
+}
+variable "vm_size" {
+  type    = string
+  default = "Standard_B1s"
+}
+variable "ssh_key_public" {
+  type      = string
+  sensitive = true
+  default   = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDdZGrZdK1h2zFrTUedM3KgFTUayGtbANXpZ0Tqe3IDgqwB6sffFpmNN5LItWDADkSfoc0xGvBPrgT9pSqbnnK4zayNN/esg2kY9EIwPoBzbhYWAvs+4hDgQRtx3gpppxWZZYQmKg7jXpLCC/BegZnZCRO2qDEuW+QkUUdADYVm8QB+VX+ow7rqp+CjqJcwaX+6hKUXK58Sim7FZtqzeI1QtpVOTUpFYArJkrMkUKeqi3+WSq42s3DILBtfRsveIF8NNNZmb41nkEuZNYIzLHa/jD56CkqmNjR+r2RBHxoMfJQcLYmNlXAXY2OSjYUFRb1lIdAyPr0leimSjfZ80Ge5qBfT0uBKnQ6FqcZS1avDC8WNKaMu4dyIMJ0bGm0uqQ0poioV0UfhI9taPZ7dbY45kG8zaQ9iqpyGYrUWFn89mChDALaX/p41qLH4c0KlUBGIIu4FAH4k+Zo+Xy6DvEKz7omMC7T/KW51k1gmy7k5hQNVGGW+FVlqDEDLLfcG5M1SoEw+iT09NgWUwo/TsCvshWpwpd5aUoktlAKpO1bFIYXgnd4xaUwN4pqeFp5fq5XKDqYYu3da90EVOSMeytmRBwnLLZI2JzCU8fArOqNxEcNErHK8W4e2vHwZT3divEdz9/tpAODVXFePpe77lNZx5+44L4OgKYjcwvRxo0R7Sw== remarkt@GEBRUIK-5LSA2K3"
+
+}
+variable "dns_label" {
+  type    = string
+  default = "matetask"
+}
+variable "github_repo" {
+  type    = string
+  default = "https://github.com/betterthink/devops_todolist_terraform_task"
+}
