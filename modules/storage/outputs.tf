@@ -3,5 +3,5 @@ output "storage_account_name" {
 }
 
 output "storage_container_name" {
-  value = azurerm_storage_container.task-artifacts.name
+  value = azurerm_storage_container.task_artifacts.name
 }
