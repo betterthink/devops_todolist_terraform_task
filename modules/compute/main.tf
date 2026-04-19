@@ -10,6 +10,12 @@ resource "azurerm_network_interface" "example" {
     public_ip_address_id          = var.public_ip_id
   }
 }
+resource "azurerm_ssh_public_key" "linuxboxsshkey" {
+  name                = "linuxboxsshkey"
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  public_key          = var.ssh_key_public
+}
 
 resource "azurerm_linux_virtual_machine" "matebox" {
   name                = var.vm_name
@@ -23,7 +29,7 @@ resource "azurerm_linux_virtual_machine" "matebox" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = var.ssh_key_public
+    public_key = azurerm_ssh_public_key.linuxboxsshkey.public_key
   }
 
   os_disk {
@@ -49,7 +55,7 @@ resource "azurerm_virtual_machine_extension" "example" {
 
   settings = <<SETTINGS
  {
-  "commandToExecute": " cd / && git clone ${var.github_repo} devops_todolist_terraform_task && chmod +x /devops_todolist_terraform_task/install-app.sh && bash /devops_todolist_terraform_task/install-app.sh && systemctl restart todoapp"
+  "commandToExecute": "apt-get update -yq && apt-get install -yq git && cd / && rm -rf devops_todolist_terraform_task && git clone ${var.github_repo} devops_todolist_terraform_task && chmod +x /devops_todolist_terraform_task/install-app.sh && /bin/bash /devops_todolist_terraform_task/install-app.sh"
  }
 SETTINGS
 
