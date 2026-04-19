@@ -14,7 +14,7 @@ resource "azurerm_ssh_public_key" "linuxboxsshkey" {
   name                = "linuxboxsshkey"
   resource_group_name = var.resource_group_name
   location            = var.location
-  public_key          = var.ssh_key_public 
+  public_key          = var.ssh_key_public
 }
 
 resource "azurerm_linux_virtual_machine" "matebox" {
