@@ -49,7 +49,7 @@ resource "azurerm_virtual_machine_extension" "example" {
 
   settings = <<SETTINGS
  {
-  "commandToExecute": " cd / && git clone ${var.github_repo} devops_todolist_terraform_task && chmod +x /devops_todolist_terraform_task/install-app.sh && bash /devops_todolist_terraform_task/install-app.sh  systemctl restart todoapp"
+  "commandToExecute": " cd / && git clone ${var.github_repo} devops_todolist_terraform_task && chmod +x /devops_todolist_terraform_task/install-app.sh && bash /devops_todolist_terraform_task/install-app.sh && systemctl restart todoapp"
  }
 SETTINGS
 

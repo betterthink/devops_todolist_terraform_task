@@ -1,7 +1,7 @@
 variable "virtual_network_name" {
   type = string
 }
-variable "vnet_adress_prefix" {
+variable "vnet_address_prefix" {
   type = string
 }
 variable "location" {
@@ -13,10 +13,10 @@ variable "resource_group_name" {
 variable "subnet_name" {
   type = string
 }
-variable "subnet_adress_prefix" {
+variable "subnet_address_prefix" {
   type = string
 }
-variable "public_ip_adress_name" {
+variable "public_ip_address_name" {
   type = string
 }
 variable "network_security_group_name" {
