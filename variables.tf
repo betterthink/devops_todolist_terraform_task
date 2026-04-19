@@ -44,6 +44,7 @@ variable "vm_size" {
 }
 variable "ssh_key_public" {
   type      = string
+  default = "your-public-key-content"
   sensitive = true
 
 }
